@@ -7,6 +7,11 @@ A voice-controlled AI butler. Two pages, zero dependencies, no API keys.
 - **`index.html`** — Home page (hero, glowing core, capabilities, how-it-works)
 - **`talk.html`** — "Talk to O.M.N.I." (voice input via Web Speech API, spoken replies via speech synthesis, rule-based brain)
 
+The site is split into small files (this keeps it under GitHub's upload limits, and is tidy anyway):
+- `css/core.css` + `css/home.css` — home page styles; `css/talk.css` — talk console styles
+- `js/omni-data.js` + `js/omni-data2.js` — the brain's speeches, jokes, facts, weather codes
+- `js/omni.js` — the brain logic (`omniRespond()`); `js/talk.js` — the talk page UI (mic, speech, typing)
+
 ## How to run
 
 **Easiest:** double-click `index.html` in Chrome or Edge. Everything is static.
@@ -35,8 +40,10 @@ Then open `http://localhost:8000`.
 
 ## How to extend it
 
-All the intelligence lives in **`js/omni.js`** — one function, `omniRespond(text)`.
-Add your own rules there (e.g. a new regex + reply). The speech UI is in `talk.html`; colours, fonts and the glowing core are in `css/style.css`.
+The intelligence lives in **`js/omni.js`** (`omniRespond()` — the rule engine) and
+**`js/omni-data.js` / `js/omni-data2.js`** (the speeches, jokes and facts).
+Add a rule to `omni.js`, or a line to the data files, and you're done. The speech UI
+is in `js/talk.js`; colours, fonts and the glowing core are in `css/core.css`, `css/home.css`, `css/talk.css`.
 
 ## Presenting / next steps
 
