@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>O.M.N.I. — School Project</title>
+  <meta name="description" content="O.M.N.I. — Obviously More than a Normal Intelligence. A voice-controlled AI butler, built as a school project." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='38' fill='none' stroke='%2300e5ff' stroke-width='6'/%3E%3Ccircle cx='50' cy='50' r='14' fill='%2300e5ff'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ======= Header ======= -->
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <span class="mini-arc" aria-hidden="true"></span>
+      <span class="name">O.M.N.I.</span>
+    </a>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="talk.html">Talk to O.M.N.I.</a>
+    </nav>
+  </header>
+
+  <!-- ======= Hero ======= -->
+  <section class="hero">
+    <p class="eyebrow">CLASSIFIED · SCHOOL PROJECT DIVISION</p>
+
+    <div class="arc" aria-hidden="true">
+      <div class="coil"></div>
+      <div class="coil coil2"></div>
+      <div class="ring r1"></div>
+      <div class="ring r2"></div>
+      <div class="core"></div>
+    </div>
+
+    <h1>O.M.N.I.</h1>
+    <p class="sub">Obviously More than a Normal Intelligence</p>
+    <p class="tag">
+      A voice-controlled AI butler with opinions, a dry wit and a luminous core.
+      Built as a school project — with designs on becoming an app.
+    </p>
+
+    <div class="actions">
+      <a class="btn btn-primary" href="talk.html">Talk to O.M.N.I.</a>
+      <a class="btn btn-ghost" href="#features">About the project</a>
+    </div>
+  </section>
+
+  <!-- ======= Features ======= -->
+  <section class="section" id="features">
+    <h2 class="section-title reveal">Capabilities</h2>
+    <p class="section-sub reveal">
+      Everything runs in the browser — no installs, no servers, no API keys.
+      Just open the page and talk.
+    </p>
+
+    <div class="grid-3">
+      <div class="card reveal">
+        <div class="icon">🎙️</div>
+        <h3>Voice input</h3>
+        <p>Speak to O.M.N.I. and the Web Speech API turns your words into text — hands-free, like the real thing.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon">🔊</div>
+        <h3>Spoken replies</h3>
+        <p>O.M.N.I. answers out loud with a deep, measured voice — pitch and pace tuned to sound like a butler, not a sat-nav.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon">🧠</div>
+        <h3>A personality</h3>
+        <p>A rule-based brain handles greetings, jokes, maths, the time, live weather, opening websites — and remembers your name.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon">💻</div>
+        <h3>Runs anywhere</h3>
+        <p>Plain HTML, CSS and JavaScript. Double-click and it works — or host it free on GitHub Pages for the whole school to see.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= How it works ======= -->
+  <section class="section" id="how">
+    <h2 class="section-title reveal">How to use it</h2>
+    <p class="section-sub reveal">Three steps. No manual required.</p>
+
+    <div class="steps">
+      <div class="step reveal">
+        <h3>Open the Talk page</h3>
+        <p>Hit "Talk to O.M.N.I." up top. Allow microphone access when the browser asks.</p>
+      </div>
+      <div class="step reveal">
+        <h3>Speak or type</h3>
+        <p>Tap the mic and talk, or just type. Try "hello", "what time is it", or "tell me a joke".</p>
+      </div>
+      <div class="step reveal">
+        <h3>Listen</h3>
+        <p>O.M.N.I. replies in text — and out loud, if the voice is on. Say "help" anytime for the full list.</p>
+      </div>
+    </div>
+
+    <p class="note reveal">
+      <strong>Heads up:</strong> voice input &amp; speech need Chrome or Edge with a microphone.
+      Everywhere else, the typing bar still works perfectly.
+    </p>
+  </section>
+
+  <!-- ======= Footer ======= -->
+  <footer class="footer">
+    <p>O.M.N.I. — Obviously More than a Normal Intelligence · School Project · Built with HTML, CSS &amp; JavaScript</p>
+    <p style="margin-top:6px; font-size:12.5px;">Mark I — prototype. AGI pending <span class="gold">●</span></p>
+  </footer>
+
+  <script>
+    // Reveal-on-scroll
+    const io = new IntersectionObserver(
+      (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add("visible")),
+      { threshold: 0.15 }
+    );
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+  </script>
+</body>
+</html>
