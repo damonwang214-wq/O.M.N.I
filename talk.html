@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Talk to O.M.N.I. — O.M.N.I.</title>
+  <meta name="description" content="Speak to O.M.N.I. — voice input, spoken replies. A school project." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='38' fill='none' stroke='%2300e5ff' stroke-width='6'/%3E%3Ccircle cx='50' cy='50' r='14' fill='%2300e5ff'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/core.css" />
+  <link rel="stylesheet" href="css/talk.css" />
+</head>
+<body>
+
+  <!-- ======= Header ======= -->
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <span class="mini-arc" aria-hidden="true"></span>
+      <span class="name">O.M.N.I.</span>
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="talk.html" class="active">Talk to O.M.N.I.</a>
+    </nav>
+  </header>
+
+  <!-- ======= Talk console ======= -->
+  <main class="talk-main">
+
+    <div class="talk-head">
+      <h2>Direct uplink</h2>
+      <div class="hud">
+        <span id="voice-status" class="toggle" title="Toggle O.M.N.I.'s spoken voice">
+          <span class="dot"></span> Voice
+        </span>
+        <span id="status" class="status" style="padding:0">Standing by</span>
+      </div>
+    </div>
+
+    <div class="chat" id="chat" aria-live="polite"></div>
+
+    <form class="composer" id="chat-form" autocomplete="off">
+      <button type="button" class="icon-btn" id="mic-btn" title="Speak to O.M.N.I. (Chrome/Edge)">🎙️</button>
+      <input id="chat-input" type="text" placeholder="Speak, or type a message… try “hello” or “help”" aria-label="Message for O.M.N.I." />
+      <button type="submit" class="icon-btn" title="Send">➤</button>
+    </form>
+
+    <p class="status" id="hint">Tip: say "help" to see everything O.M.N.I. can do.</p>
+  </main>
+
+  <script src="js/omni-data.js"></script>
+  <script src="js/omni-data2.js"></script>
+  <script src="js/omni.js"></script>
+  <script src="js/talk.js"></script>
+</body>
+</html>
