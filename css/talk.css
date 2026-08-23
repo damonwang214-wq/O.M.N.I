@@ -1,0 +1,56 @@
+/* O.M.N.I. — talk (shared site stylesheet, split for size) */ Page 2 — Talk to O.M.N.I. ============================================================ */ .talk-main { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; padding: 20px 20px 10px; display: flex; flex-direction: column; height: calc(100vh - 64px); }
+.talk-head { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 6px 4px 16px; flex-wrap: wrap; }
+.talk-head h2 { font-size: 17px; letter-spacing: 0.2em; text-transform: uppercase; }
+.talk-head .hud { display: flex; align-items: center; gap: 18px; font-family: var(--font-display); font-size: 11px; letter-spacing: 0.14em; color: var(--muted); text-transform: uppercase; }
+.toggle { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; user-select: none; color: var(--muted); transition: color 0.2s; }
+.toggle:hover { color: var(--cyan); }
+.toggle .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 8px var(--cyan); transition: background 0.2s, box-shadow 0.2s; }
+.toggle.off .dot { background: var(--muted); box-shadow: none; }
+.chat { flex: 1; min-height: 320px; overflow-y: auto; display: flex; flex-direction: column; gap: 14px; padding: 18px 10px 18px; background: rgba(10, 16, 29, 0.55); border: 1px solid var(--line); border-radius: 14px; scrollbar-width: thin; scrollbar-color: var(--cyan-dim) transparent; }
+.chat::-webkit-scrollbar { width: 8px; }
+.chat::-webkit-scrollbar-thumb { background: var(--cyan-dim); border-radius: 8px; }
+.msg { display: flex; gap: 12px; max-width: 82%; animation: msg-in 0.28s ease both; }
+@keyframes msg-in { from { opacity: 0; transform: translateY(10px); }
+to { opacity: 1; transform: none; }
+}
+.msg.omni { align-self: flex-start; }
+.msg.user { align-self: flex-end; flex-direction: row-reverse; }
+.avatar { flex: 0 0 auto; width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--cyan-soft); background: radial-gradient(circle, #c9fbff 0 12%, transparent 14%), radial-gradient(circle, transparent 52%, var(--cyan-dim) 53% 70%, transparent 72%); animation: core-pulse 3s ease-in-out infinite; }
+.bubble { padding: 12px 16px; border-radius: 12px; font-size: 16.5px; line-height: 1.55; white-space: pre-wrap; word-wrap: break-word; }
+.msg.omni .bubble { background: linear-gradient(180deg, var(--panel-2), var(--panel)); border: 1px solid var(--line); border-top-left-radius: 3px; }
+.msg.speaking .bubble { border-color: var(--cyan); box-shadow: 0 0 20px rgba(0, 229, 255, 0.22); }
+.msg.user .bubble { background: linear-gradient(135deg, rgba(0, 229, 255, 0.22), rgba(0, 149, 176, 0.22)); border: 1px solid var(--cyan-soft); border-top-right-radius: 3px; color: #eafaff; }
+.typing { display: inline-flex; gap: 5px; align-items: center; padding: 4px 2px; }
+.typing span { width: 7px; height: 7px; border-radius: 50%; background: var(--cyan); animation: blink 1.2s infinite ease-in-out; }
+.typing span:nth-child(2) { animation-delay: 0.2s; }
+.typing span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes blink { 0%, 80%, 100% { opacity: 0.25; transform: scale(0.8); }
+40% { opacity: 1; transform: scale(1.15); }
+}
+.wave { display: inline-flex; gap: 3px; align-items: flex-end; height: 16px; margin-left: 10px; vertical-align: middle; }
+.wave i { width: 3px; height: 100%; background: var(--cyan); border-radius: 2px; animation: wave 0.9s infinite ease-in-out; }
+.wave i:nth-child(2) { animation-delay: 0.15s; }
+.wave i:nth-child(3) { animation-delay: 0.3s; }
+.wave i:nth-child(4) { animation-delay: 0.45s; }
+.wave i:nth-child(5) { animation-delay: 0.6s; }
+@keyframes wave { 0%, 100% { height: 30%; }
+50% { height: 100%; }
+}
+.composer { display: flex; gap: 10px; align-items: center; padding: 14px 6px 6px; }
+.composer input { flex: 1; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; color: var(--text); font-family: var(--font-body); font-size: 16px; padding: 13px 16px; outline: none; transition: border-color 0.2s, box-shadow 0.2s; }
+.composer input:focus { border-color: var(--cyan-soft); box-shadow: 0 0 16px rgba(0, 229, 255, 0.15); }
+.composer input::placeholder { color: var(--muted); }
+.icon-btn { position: relative; width: 50px; height: 50px; flex: 0 0 auto; border-radius: 50%; border: 1px solid var(--cyan-soft); background: var(--panel); color: var(--cyan); font-size: 19px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; transition: background 0.2s, box-shadow 0.2s; }
+.icon-btn:hover { background: rgba(0, 229, 255, 0.1); }
+#mic-btn.listening { background: rgba(0, 229, 255, 0.15); }
+#mic-btn.listening::after { content: ""; position: absolute; inset: -8px; border-radius: 50%; border: 1px solid var(--cyan); animation: mic-ring 1.4s infinite ease-out; }
+@keyframes mic-ring { 0% { transform: scale(0.75); opacity: 1; }
+100% { transform: scale(1.4); opacity: 0; }
+}
+#mic-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.status { text-align: center; color: var(--muted); font-size: 13px; letter-spacing: 0.08em; padding: 2px 0 10px; }
+.status .ok { color: var(--cyan); }
+.status .warn { color: var(--gold); }
+.status .err { color: var(--danger); }
+.msg { max-width: 92%; }
+.talk-head { flex-direction: column; align-items: flex-start; }
