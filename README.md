@@ -48,4 +48,5 @@ is in `js/talk.js`; colours, fonts and the glowing core are in `css/core.css`, `
 ## Presenting / next steps
 
 - Host it free: GitHub Pages (drag the folder into a repo → Settings → Pages) or Netlify Drop.
-- To make it an "app": add a manifest + service worker and Chrome will let you *Install* it like an app (PWA). Say the word and I'll add it.
+- **It's now a PWA!** `manifest.json` + `sw.js` give it an app icon and offline support — on a phone: **Share → Add to Home Screen** (iOS) or the browser's **Install app** (Android/Chrome). It opens like a real app with its own icon.
+- When you push updates, bump the `CACHE` version at the top of `sw.js` so returning visitors get the new version.
